@@ -4,6 +4,7 @@ require 'ii'
 require 'logger'
 require 'fileutils'
 
+
 #创建一个logger输出警告和错误信息
 logger = Logger.new(STDERR)
 logger.level = Logger::WARN
@@ -20,6 +21,8 @@ dest_android_xhdpi_dir = 'android/drawable-xhdpi'
 dest_android_hdpi_dir = 'android/drawable-hdpi'
 dest_android_mdpi_dir = 'android/drawable-mdpi'
 
+# 开始流程
+
 # 是否有_source文件夹
 if File.directory? source_dir
 
@@ -35,7 +38,9 @@ if File.directory? source_dir
   # 得到文件和文件夹的列表
   files = []
   Find.find(source_dir) do |path|
-    files << path
+    if path.size > source_dir.size # not root
+      files << path
+    end
   end
 
   puts files
@@ -43,6 +48,19 @@ if File.directory? source_dir
   # 全部拷贝到iOS目标路径
   FileUtils.cp_r source_dir + '/.', dest_ios_dir
 
+  # 全部处理后放到Android目标路径
+  files.each do |filename|
+    # 如果是文件夹，就复制一份
+    if File.directory? filename
+      FileUtils.mkdir_p dest_android_xhdpi_dir + filename.slice(/\/.*/)
+    ## 如果不是文件夹，就拷贝文件
+    else
+      FileUtils.cp filename,dest_android_xhdpi_dir + filename.slice(/\/.*/)
+    end
+
+  end
+
 else
   logger.warn 'Please put all files to _source directory.'
 end
+
