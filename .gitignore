@@ -21,3 +21,5 @@ tmp
 *.a
 mkmf.log
 _source/
+.idea/
+.DS_Store

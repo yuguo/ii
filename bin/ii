@@ -7,13 +7,16 @@ require 'logger'
 logger = Logger.new(STDERR)
 logger.level = Logger::WARN
 
+# change to current directory
+Dir.chdir(Dir.pwd)
+
 # 定义一些目录
-source_dir = Dir.pwd + '/_source'
-dest_ios_dir = Dir.pwd + '/ios'
-dest_android_dir = Dir.pwd + '/android'
-dest_android_xhdpi_dir = Dir.pwd + '/android/drawable-xhdpi'
-dest_android_hdpi_dir = Dir.pwd + '/android/drawable-hdpi'
-dest_android_mdpi_dir = Dir.pwd + '/android/drawable-mdpi'
+source_dir = '_source'
+dest_ios_dir = 'ios'
+dest_android_dir = 'android'
+dest_android_xhdpi_dir = 'android/drawable-xhdpi'
+dest_android_hdpi_dir = 'android/drawable-hdpi'
+dest_android_mdpi_dir = 'android/drawable-mdpi'
 
 # 是否有_source文件夹
 if File.directory? source_dir
