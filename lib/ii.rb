@@ -3,6 +3,8 @@ require "Parallel"
 require "RMagick"
 require "Find"
 
+
+
 class Ii
   def self.resize(filename, new_filename, resize_ratio)
     # read the image
@@ -16,9 +18,11 @@ class Ii
     dest_height = height*resize_ratio
     dest_width = width*resize_ratio
 
+
     # resize the new image
     # the api can be found at http://studio.imagemagick.org/RMagick/doc/constants.html#GravityType
-    new_img = img.resize(0.75)
+    new_img = img.resize(dest_width, dest_height, Magick::LanczosFilter, 0.8)
+    # new_img = img.resize(0.75)
 
     # set quality
     new_img.write(new_filename) {self.quality = 70 }
