@@ -23,3 +23,5 @@ mkmf.log
 _source/
 .idea/
 .DS_Store
+ios/
+android/

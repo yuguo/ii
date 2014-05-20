@@ -1,0 +1,9 @@
+require 'fileutils'
+
+# 定义一些目录
+source_dir = '_source'
+dest_ios_dir = 'ios'
+dest_android_dir = 'android'
+
+FileUtils.rm_rf(dest_ios_dir)
+FileUtils.rm_rf(dest_android_dir)

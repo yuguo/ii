@@ -2,6 +2,7 @@
 
 require 'ii'
 require 'logger'
+require 'fileutils'
 
 #创建一个logger输出警告和错误信息
 logger = Logger.new(STDERR)
@@ -11,6 +12,7 @@ logger.level = Logger::WARN
 Dir.chdir(Dir.pwd)
 
 # 定义一些目录
+current_dir = Dir.pwd
 source_dir = '_source'
 dest_ios_dir = 'ios'
 dest_android_dir = 'android'
@@ -30,15 +32,23 @@ if File.directory? source_dir
     Dir.mkdir path
   end
 
+  # 得到文件和文件夹的列表
   files = []
   Find.find(source_dir) do |path|
-    # 过滤掉_开头的文件和文件夹
-    if File.basename(path)[0] == '_'
+    files << path
+  end
+
+  puts files
+
+  # 全部拷贝到iOS目标路径
+  files.each do |filename|
+    if File.directory? filename
+      Dir.mkdir dest_ios_dir + '/' + filename
     else
-      puts path
-      next
+      FileUtils.cp(filename, dest_ios_dir)
     end
   end
+
 else
   logger.warn 'Please put all files to _source directory.'
 end
