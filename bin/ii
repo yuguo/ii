@@ -53,9 +53,10 @@ if File.directory? source_dir
     # 如果是文件夹，就复制一份
     if File.directory? filename
       FileUtils.mkdir_p dest_android_xhdpi_dir + filename.slice(/\/.*/)
-    ## 如果不是文件夹，就拷贝文件
+    ## 如果是文件，就改名并拷贝文件
     else
-      FileUtils.cp filename,dest_android_xhdpi_dir + filename.slice(/\/.*/)
+      new_filename = filename.slice(/\/.*/).sub('@2x','')
+      FileUtils.cp filename,dest_android_xhdpi_dir + new_filename
     end
 
   end
