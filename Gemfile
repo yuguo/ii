@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'parallel', '1.0.0'
+gem 'rmagick', '~> 2.13'

@@ -38,8 +38,13 @@ if File.directory? source_dir
   # 得到文件和文件夹的列表
   files = []
   Find.find(source_dir) do |path|
-    if path.size > source_dir.size # not root
-      files << path
+    # not root
+    if path.size > source_dir.size
+      if File.directory?path
+        files << path
+      elsif path.match('.png|.jpg')
+        files << path
+      end
     end
   end
 
@@ -55,13 +60,12 @@ if File.directory? source_dir
       FileUtils.mkdir_p dest_android_xhdpi_dir + filename.slice(/\/.*/)
     ## 如果是文件，就改名并拷贝文件
     else
-      new_filename = filename.slice(/\/.*/).sub('@2x','')
-      FileUtils.cp filename,dest_android_xhdpi_dir + new_filename
+      new_filename = dest_android_xhdpi_dir + filename.slice(/\/.*/).sub('@2x','')
+      FileUtils.cp filename,new_filename
+      Ii.resize filename,new_filename,0.5
     end
-
   end
 
 else
   logger.warn 'Please put all files to _source directory.'
 end
-
