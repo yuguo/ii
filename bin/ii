@@ -41,13 +41,7 @@ if File.directory? source_dir
   puts files
 
   # 全部拷贝到iOS目标路径
-  files.each do |filename|
-    if File.directory? filename
-      Dir.mkdir dest_ios_dir + '/' + filename
-    else
-      FileUtils.cp(filename, dest_ios_dir)
-    end
-  end
+  FileUtils.cp_r source_dir + '/.', dest_ios_dir
 
 else
   logger.warn 'Please put all files to _source directory.'
