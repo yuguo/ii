@@ -1,4 +1,41 @@
 #!/usr/bin/env ruby
 
 require 'ii'
-puts Ii.hi()
+require 'logger'
+
+#创建一个logger输出警告和错误信息
+logger = Logger.new(STDERR)
+logger.level = Logger::WARN
+
+# 定义一些目录
+source_dir = Dir.pwd + '/_source'
+dest_ios_dir = Dir.pwd + '/ios'
+dest_android_dir = Dir.pwd + '/android'
+dest_android_xhdpi_dir = Dir.pwd + '/android/drawable-xhdpi'
+dest_android_hdpi_dir = Dir.pwd + '/android/drawable-hdpi'
+dest_android_mdpi_dir = Dir.pwd + '/android/drawable-mdpi'
+
+# 是否有_source文件夹
+if File.directory? source_dir
+
+  # 创建各种输出文件夹
+  [dest_ios_dir,
+  dest_android_dir,
+  dest_android_xhdpi_dir,
+  dest_android_hdpi_dir,
+  dest_android_mdpi_dir].each do |path|
+    Dir.mkdir path
+  end
+
+  files = []
+  Find.find(source_dir) do |path|
+    # 过滤掉_开头的文件和文件夹
+    if File.basename(path)[0] == '_'
+    else
+      puts path
+      next
+    end
+  end
+else
+  logger.warn 'Please put all files to _source directory.'
+end

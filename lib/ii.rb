@@ -1,8 +1,13 @@
 require "ii/version"
+require "Parallel"
+require "Find"
 
 class Ii
   def self.hi
-    puts "Hello world!"
+    files = ['a', 'b', 'c', 'd']
+    Parallel.each(files){|file|
+      puts "Hello world!"
+    }
     return "Hello world!"
   end
 end
