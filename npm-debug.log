@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'hola' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose cache add [ 'hola', null ]
+5 verbose cache add name=undefined spec="hola" args=["hola",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'hola',
+6 verbose parsed url   path: 'hola',
+6 verbose parsed url   href: 'hola' }
+7 silly lockFile 99800b85-hola hola
+8 verbose lock hola /Users/yuguo/.npm/99800b85-hola.lock
+9 silly lockFile 99800b85-hola hola
+10 silly lockFile 99800b85-hola hola
+11 verbose addNamed [ 'hola', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile b7a5add3-hola hola@
+14 verbose lock hola@ /Users/yuguo/.npm/b7a5add3-hola.lock
+15 silly addNameRange { name: 'hola', range: '*', hasData: false }
+16 verbose url raw hola
+17 verbose url resolving [ 'http://registry.npmjs.org/', './hola' ]
+18 verbose url resolved http://registry.npmjs.org/hola
+19 info trying registry request attempt 1 at 11:52:02
+20 http GET http://registry.npmjs.org/hola
+21 http 404 http://registry.npmjs.org/hola
+22 silly registry.get cb [ 404,
+22 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     'cache-control': 'max-age=0',
+22 silly registry.get     'content-length': '52',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     date: 'Tue, 20 May 2014 03:52:02 GMT',
+22 silly registry.get     age: '0',
+22 silly registry.get     connection: 'keep-alive',
+22 silly registry.get     'x-served-by': 'cache-v44-ASH, cache-ty66-TYO',
+22 silly registry.get     'x-cache': 'MISS, MISS',
+22 silly registry.get     'x-cache-hits': '0, 0',
+22 silly registry.get     'x-timer': 'S1400557922.384551287,VS0,VS88,VE127,VE209' } ]
+23 silly lockFile b7a5add3-hola hola@
+24 silly lockFile b7a5add3-hola hola@
+25 error 404 'hola' is not in the npm registry.
+25 error 404 You should bug the author to publish it
+25 error 404
+25 error 404 Note that you can also install from a
+25 error 404 tarball, folder, or http url, or git url.
+26 error System Darwin 13.1.0
+27 error command "node" "/usr/local/bin/npm" "install" "hola"
+28 error cwd /Users/yuguo/projects/ii
+29 error node -v v0.10.26
+30 error npm -v 1.4.3
+31 error code E404
+32 verbose exit [ 1, true ]
