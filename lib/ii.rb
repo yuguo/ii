@@ -18,11 +18,13 @@ class Ii
     dest_height = height*resize_ratio
     dest_width = width*resize_ratio
 
+    # make sure height and width is not 0
+    dest_height = dest_height < 1 ? 1 : dest_height
+    dest_width = dest_width < 1 ? 1:dest_width
 
     # resize the new image
     # the api can be found at http://studio.imagemagick.org/RMagick/doc/constants.html#GravityType
     new_img = img.resize(dest_width, dest_height, Magick::LanczosFilter, 0.8)
-    # new_img = img.resize(0.75)
 
     # set quality
     new_img.write(new_filename) {self.quality = 70 }

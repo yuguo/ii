@@ -48,8 +48,6 @@ if File.directory? source_dir
     end
   end
 
-  puts files
-
   # 全部拷贝到iOS目标路径
   FileUtils.cp_r source_dir + '/.', dest_ios_dir
 
@@ -57,11 +55,13 @@ if File.directory? source_dir
   files.each do |filename|
     # 如果是文件夹，就复制一份
     if File.directory? filename
+      puts 'Copying Directory: ' + filename
       FileUtils.mkdir_p dest_android_xhdpi_dir + filename.slice(/\/.*/)
       FileUtils.mkdir_p dest_android_hdpi_dir + filename.slice(/\/.*/)
       FileUtils.mkdir_p dest_android_mdpi_dir + filename.slice(/\/.*/)
     ## 如果是文件，就改名并拷贝文件
     else
+      puts 'Resizing image: ' + filename
       relative_filename = filename.slice(/\/.*/).sub('@2x','')
       FileUtils.cp filename,dest_android_xhdpi_dir + relative_filename
       Ii.resize filename, dest_android_hdpi_dir + relative_filename, 0.75
