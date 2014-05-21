@@ -1,8 +1,14 @@
-# Ii
+# ii
 
-TODO: Write a gem description
+ii(image idea) is a image tool set for mobile app image operate.
+
+ii(image idea)是一个处理移动端图片的工作套件。
 
 ## Installation
+
+Install Ruby and gem, if you don't know how to do it, see [this document]().
+
+安装Ruby和gem，如果你不知道如何安装，看看[这篇文章]()。
 
 Add this line to your application's Gemfile:
 
