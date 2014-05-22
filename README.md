@@ -4,7 +4,7 @@ ii(image idea)是一个处理移动端图片的工作套件。
 
 ## Installation
 
-安装Ruby和gem，如果你使用mac系统，已经预装了这两个环境和软件。
+安装Ruby和gem，如果你使用mac系统，已经预装了这两个环境和软件。检验方法是，打开终端，输入`ruby -v`和`gem -v`，如果能正确显示版本号，则表示已经安装成功。
 
 1. 安装`imagemagick`：
 
