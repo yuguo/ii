@@ -28,11 +28,11 @@ ii(image idea)是一个处理移动端图片的工作套件。
 
 然后运行`ii`，如果一切正常的话，你会在`/Users/yuguo/test/`目录查看到生成的图片：
 
-   /Users/yuguo/test/ios/source@2x.png 200%
-   /Users/yuguo/test/ios/source.png 100%
-   /Users/yuguo/test/Android/drawable-xldpi/source.png 200%
-   /Users/yuguo/test/Android/drawable-ldpi/source.png 150%
-   /Users/yuguo/test/Android/drawable-mdpi/source.png 100%
+    /Users/yuguo/test/ios/source@2x.png 200%
+    /Users/yuguo/test/ios/source.png 100%
+    /Users/yuguo/test/Android/drawable-xldpi/source.png 200%
+    /Users/yuguo/test/Android/drawable-ldpi/source.png 150%
+    /Users/yuguo/test/Android/drawable-mdpi/source.png 100%
    
 ## Bug反馈
 
