@@ -6,25 +6,39 @@ ii(image idea)是一个处理移动端图片的工作套件。
 
 ## Installation
 
-Install Ruby and gem, if you don't know how to do it, see [this document]().
+安装Ruby和gem，如果你使用mac系统，已经预装了这两个环境和软件。
 
-安装Ruby和gem，如果你不知道如何安装，看看[这篇文章]()。
+安装`imagemagick`：
 
-Add this line to your application's Gemfile:
+   $ brew install imagemagick
 
-    gem 'ii'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+安装ii：
 
     $ gem install ii
 
 ## Usage
 
-TODO: Write usage instructions here
+### 压缩图片
+
+假设需要压缩的图片放在`/Users/yuguo/_source`：
+
+    /Users/yuguo/_source/source@2x.png 200%
+
+先cd到`/Users/yuguo/`目录（注意，`~`代表当前的用户目录，这样你就不用输入`/Users/yuguo/`了）：
+
+    $ cd ~
+
+然后运行`ii`，如果一切正常的话，你会在`/Users/yuguo/`目录查看到生成的图片：
+
+   /Users/yuguo/ios/source@2x.png 200%
+   /Users/yuguo/ios/source.png 100%
+   /Users/yuguo/Android/drawable-xldpi/source@2x.png 200%
+   /Users/yuguo/Android/drawable-ldpi/source@2x.png 150%
+   /Users/yuguo/Android/drawable-mdpi/source@2x.png 100%
+   
+## Bug反馈
+
+   如有bug，请发起[issue](https://github.com/yuguo/ii/issues)
 
 ## Contributing
 
