@@ -1,18 +1,16 @@
 # ii
 
-ii(image idea) is a image tool set for mobile app image operate.
-
 ii(image idea)是一个处理移动端图片的工作套件。
 
 ## Installation
 
 安装Ruby和gem，如果你使用mac系统，已经预装了这两个环境和软件。
 
-安装`imagemagick`：
+1. 安装`imagemagick`：
 
-   $ brew install imagemagick
+    $ brew install imagemagick
 
-安装ii：
+2. 安装`ii`：
 
     $ gem install ii
 
@@ -20,21 +18,21 @@ ii(image idea)是一个处理移动端图片的工作套件。
 
 ### 压缩图片
 
-假设需要压缩的图片放在`/Users/yuguo/_source`：
+假设需要压缩的图片放在`/Users/yuguo/test/_source`：
 
-    /Users/yuguo/_source/source@2x.png 200%
+    /Users/yuguo/test/_source/source@2x.png 200%
 
-先cd到`/Users/yuguo/`目录（注意，`~`代表当前的用户目录，这样你就不用输入`/Users/yuguo/`了）：
+在命令行中先切换到`/Users/yuguo/test/`目录（注意，`~`代表当前的用户目录，这样你就不用输入`/Users/yuguo/`了）：
 
-    $ cd ~
+    $ cd ~/test
 
-然后运行`ii`，如果一切正常的话，你会在`/Users/yuguo/`目录查看到生成的图片：
+然后运行`ii`，如果一切正常的话，你会在`/Users/yuguo/test/`目录查看到生成的图片：
 
-   /Users/yuguo/ios/source@2x.png 200%
-   /Users/yuguo/ios/source.png 100%
-   /Users/yuguo/Android/drawable-xldpi/source@2x.png 200%
-   /Users/yuguo/Android/drawable-ldpi/source@2x.png 150%
-   /Users/yuguo/Android/drawable-mdpi/source@2x.png 100%
+   /Users/yuguo/test/ios/source@2x.png 200%
+   /Users/yuguo/test/ios/source.png 100%
+   /Users/yuguo/test/Android/drawable-xldpi/source.png 200%
+   /Users/yuguo/test/Android/drawable-ldpi/source.png 150%
+   /Users/yuguo/test/Android/drawable-mdpi/source.png 100%
    
 ## Bug反馈
 
