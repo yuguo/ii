@@ -26,7 +26,7 @@ mac中运行命令行的软件叫“终端”，你可以在“实用工具”�
     
 如果你没有安装`brew`，可以选择ImageMagick一键安装，下载地址：
 
-    [http://cactuslab.com/imagemagick/](http://cactuslab.com/imagemagick/)
+[http://cactuslab.com/imagemagick/](http://cactuslab.com/imagemagick/)
     
 选择第一个安装包即可。
 
