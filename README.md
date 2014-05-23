@@ -16,9 +16,15 @@ mac中运行命令行的软件叫“终端”，你可以在“实用工具”�
 
 升级完成之后，再次查看版本号，确保升级成功。
 
-1. 安装`imagemagick`：
+1. 安装`imagemagick`
+
+如果你安装了`brew`——检验方法是看看`brew -v`有没有返回brew的版本号，安装就很简单，输入以下代码：
 
     $ brew install imagemagick
+    
+如果你没有安装`brew`，可以选择ImageMagick一键安装，下载地址：
+
+    [http://cactuslab.com/imagemagick/](http://cactuslab.com/imagemagick/)
 
 2. 安装`ii`：
 
